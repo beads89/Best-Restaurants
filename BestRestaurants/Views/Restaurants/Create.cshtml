@@ -2,18 +2,29 @@
   Layout = "_Layout";
 }
 
-@model BestRestaurants.Models.Item
+@model BestRestaurants.Models.Restaurant
 
-<h4>Add a new task</h4>
+<h4>Add a new Restaurant</h4>
 
 @using (Html.BeginForm())
 {
+
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
 
-  @Html.LabelFor(model => model.Category)
-  @Html.DropDownList("CategoryId")
+  @Html.LabelFor(model => model.Location)
+  @Html.TextBoxFor(model => model.Location)
+
+  @Html.LabelFor(model => model.Cuisine)
+  @Html.DropDownList("CuisineId")
+
+  @Html.LabelFor(model => model.PriceRange)
+  @Html.TextBoxFor(model => model.PriceRange)
 
   <input type="submit" value="Add new item" class="btn btn-default" />
 }
 <p>@Html.ActionLink("Show all items", "Index")</p>
+<p>@Html.ActionLink("Return Home", "Index", "Home")</p>

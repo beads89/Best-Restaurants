@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace BestRestaurants.Controllers
 {
-  public class CuisinesController : Controller
+  public class CuisineController : Controller
   {
     private readonly BestRestaurantsContext _db;
 
-    public CuisinesController(BestRestaurantsContext db)
+    public CuisineController(BestRestaurantsContext db)
     {
       _db = db;
     }
@@ -27,43 +27,43 @@ namespace BestRestaurants.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Cusine cusine)
+    public ActionResult Create(Cuisine cuisine)
     {
-      _db.Cusine.Add(cusine);
+      _db.Cuisines.Add(cuisine);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Cusine thisCusine = _db.Cuisines.FirstOrDefault(cusine => cusine.CusineId == id);
-      return View(thisCusine);
+      Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      return View(thisCuisine);
     }
     public ActionResult Edit(int id)
     {
-      var thisCusine = _db.Cusines.FirstOrDefault(cusine => cusine.CusineId == id);
-      return View(thisCusine);
+      var thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      return View(thisCuisine);
     }
 
     [HttpPost]
-    public ActionResult Edit(Cusine cusine)
+    public ActionResult Edit(Cuisine cuisine)
     {
-      _db.Entry(cusine).State = EntityState.Modified;
+      _db.Entry(cuisine).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisCusine = _db.Cusines.FirstOrDefault(cusine => cusine.CusineId == id);
-      return View(thisCusine);
+      var thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      return View(thisCuisine);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisCusine = _db.Cusines.FirstOrDefault(cusine => cusine.CusineId == id);
-      _db.Cusine.Remove(thisCusine);
+      var thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      _db.Cuisines.Remove(thisCuisine);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
