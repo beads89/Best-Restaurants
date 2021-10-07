@@ -17,7 +17,7 @@
 ## Description
 
 This application allows the user to create and store a list of restaurants, logging the name, cuisine type, proce range, etc. The user can view their list, view the types of cuisines, and search for restaurants by cuisine type.
-This application was created for Epicodus to demonstrate an understanding of ASP.NET Core MVC, SQL databases, and one to many relationships in C#. 
+This application was created for Epicodus to demonstrate an understanding of ASP.NET Core MVC, SQL databases, and one to many relationships in C#.
 
 * Project objectives:
   - Create cuisine and resturant classes
@@ -36,7 +36,7 @@ This application was created for Epicodus to demonstrate an understanding of ASP
 
 ### Installation
 
-* Clone [this](github.com/beads89/BestRestaurants) repository, or download and open the Zip on your local machine
+* Clone [this](https://github.com/beads89/Best-Restaurants) repository, or download and open the Zip on your local machine
 * Open the BestRestaurants.Solutions folder in your preferred text editor
 * To install required packages, navigate to the terminal and type the following commands:
   - dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0
@@ -81,5 +81,5 @@ Copyright 2021 Brandon Eads, Chynna Lew
 
 ## Support and contact details
 
-* [Brandon Eads](github.com/beads89)
+* [Brandon Eads](github.com/beads89) <Brandon181989@hotmail.com>
 * [Chynna Lew](github.com/chynnalew) <ChynnaLew@yahoo.com>

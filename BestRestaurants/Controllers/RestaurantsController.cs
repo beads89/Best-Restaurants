@@ -73,15 +73,17 @@ namespace BestRestaurants.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-    
-    public ActionResult Search(int search)
+    public ActionResult Search()
     {
-      // Console.WriteLine(search);
-      Console.WriteLine("Search input: " + search);
-      
-      var searchList = _db.Restaurants.Where(restaurant => restaurant.CuisineId == search).ToList();
-      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
-      return View(searchList);
+      return View();
+    }
+    [HttpPost]
+    public ActionResult Search(int CuisineId)
+    {
+      List<Restaurant> searchList = _db.Restaurants.Where(restaurant => restaurant.CuisineId == CuisineId).ToList();
+      ViewBag.CuisineId = _db.Cuisines.ToList();
+      Console.WriteLine(CuisineId);
+      return View("Index", searchList);
     }
   }
 }
