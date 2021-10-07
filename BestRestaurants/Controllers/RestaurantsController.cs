@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using BestRestaurants.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace BestRestaurants.Controllers
 {
@@ -75,7 +76,11 @@ namespace BestRestaurants.Controllers
     
     public ActionResult Search(int search)
     {
-      List<Restaurant> searchList = _db.Restaurants.Where(restaurant => restaurant.CuisineId == search).ToList();
+      // Console.WriteLine(search);
+      Console.WriteLine("Search input: " + search);
+      
+      var searchList = _db.Restaurants.Where(restaurant => restaurant.CuisineId == search).ToList();
+      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
       return View(searchList);
     }
   }
